@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AWS - SAA Notes</title>
+</head>
+<body>
+
+<h1>Notes - AWS Certified Solutions Architect Associate Certification SAA-C03</h1>
+<p>Updated as of 4/26/2023</p>
+
+<h2>AWS Global infrastructure</h2>
+<p>
+    <a href="https://infrastructure.aws">AWS infrastructure</a><br>
+    AWS Regions<br>
+    AWS Availability Zones<br>
+    AWS Data Centers<br>
+    AWS Edge Locations/Points of Presence<br> 
+</p>
+
+<h2>Regions</h2>
+<p>
+    A cluster of data centers placed all over the world. Most AWS services are regionally scoped.<br><br>
+    If you need to launch a new application, where should you do it?<br><br>
+    It depends on the following factors:<br>
+    1. Compliance to governance & legal requirements: data never leaves a region w/o explicit permission.<br>
+    2. Proximity to customers: for reduced latency.<br>
+    3. Available Service within a region: new services and new features arent available in every region.<br>
+    4. Pricing: this varies region to region. This can be found in the services pricing page.<br>
+</p>
+
+<h2>Availability Zones (AZ's)</h2>
+<p>
+    Each region has between 3 & 6 AZ's.<br>
+    Each AZ is one or more discrete data centers with redundant power, networking, & connectivity.<br>
+    Each zone is geographically seperated from each other so they are isolated from disaster (weather, terrorism, etc)<br>
+    Each AZ is connected with high bandwidth, ultra-low latency networking. These connections make the AZ's a region.<br>
+</p>
+
+<h2>AWS Points of Presence (Edge Locations)</h2>
+<p>
+    200+ Points of Presence, 84 cities, in 42 countries.<br>
+    Delivers content to end users with low latency.<br>
+</p>
+
+<h2>Services</h2>
+<p>
+    Service can be found by alphabetical listing, category, or by typing in the search bar.<br>
+    Some services are Global, while others are region specific.<br>
+    To find which region has which service see: <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4">AWS Regional Services</a><br>
+    If the service you desire is not listed, change to a region where it is available.
+</p>
+
+<h2>IAM - Identity & Access Management</h2>
+<p>
+    Root Account - created by default and should not be used or shared.<br>
+    Users - people within your organization and can be grouped.<br>
+    Groups - Permissions are assigned to the group and inherited by each user in the group. Can only contain users, not other groups. Users are not required to be in a group. Users can be in multiple groups.<br>
+    Users or groups can be assigned JSON documents call policies.<br>
+    Polices - define the permissions of the user using the 'l
+    
+    <h3>IAM Policies Structure</h3>
+    <p>A JSON document containing:<br>
+        1. Version: policy language version "year-month-day"<br>
+        2. ID: identifier for policy (Optional)<br>
+        3. Statement: Required and 1 or more individual statements.<br><br>
+        Inside of a statement are:<br>
+        1. SID: Statement ID (Optional)<br>
+        2. Effect: Whether the statement allows or denys access.<br>
+        3. Principal: Account, user, or role to which a policy is applied to.<br>
+        4. Action: list of resources to which action applies to.<br>     
+        5. Resource: list of resources to which the actions applied to.<br>
+        6. Condition: for when this policy is in effect.(Optional)<br>
+    </p>
+
+</p>
+
+</body>
+</html>
