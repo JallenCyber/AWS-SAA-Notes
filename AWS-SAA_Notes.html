@@ -71,8 +71,36 @@
         5. Resource: list of resources to which the actions applied to.<br>
         6. Condition: for when this policy is in effect.(Optional)<br>
     </p>
-
 </p>
+
+<h2>IAM - passwords</h2>
+<p>
+    You can setup password policies in AWS. Policies like:<br>
+    -Minimum password lengths.<br>
+    -Require special characters like: upper & lower case letters, numers, and special characters.</a><br>
+    You can also allow users to change their own passwords.<br>
+    You can require them to change their password after a designated password age<br>
+    You can prevent password reuse<br>
+</p>
+
+<h2>IAM - MFA</h2>
+<p>
+    Users have access to your account and can change/add/delete. things that they have permissions to.<br>
+    Protecting Root and IAM users with MFA is crucial<br>
+    MFA = Password that you know + a sercurity device you own.</a><br>
+    The benefit of MFA is that if your account credentials are stolen your account is still safe.<br>
+    You can require them to change their password after a designated password age.<br>
+    You can prevent password reuse.<br><br>
+
+    Devices that can be used for MFA:<br>
+    1. Google Authenticator (phone only)(virtual MFA Device). This can support multiple tokesn on a single device.<br>
+    2. Authy (multi device)(virtual MFA Device). This can support multiple tokesn on a single device.<br>
+    3. YubiKey(Universal 2nd Factor (U2F) Security Key). This supports multiple root & IAM users using a single key.<br>
+    4. Hardware Key Fob MFA Device, provided by Gemalto<br>
+    5. Hardware Key Fob MFA Device for AWS GovCloud, if you are in the USG, provided by SurePassID<br>
+</p>
+
+
 
 </body>
 </html>
