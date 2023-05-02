@@ -6,7 +6,7 @@
 <body>
 
 <h1>Notes - AWS Certified Solutions Architect Associate Certification SAA-C03</h1>
-<p>Updated as of 4/26/2023</p>
+
 
 <h2>AWS Global infrastructure</h2>
 <p>
@@ -42,7 +42,7 @@
     Delivers content to end users with low latency.<br>
 </p>
 
-<h2>Services</h2>
+<h2 >Services</h2>
 <p>
     Service can be found by alphabetical listing, category, or by typing in the search bar.<br>
     Some services are Global, while others are region specific.<br>
@@ -50,7 +50,7 @@
     If the service you desire is not listed, change to a region where it is available.
 </p>
 
-<h2>IAM - Identity & Access Management</h2>
+<h2 style="color:red;">IAM - Identity & Access Management</h2>
 <p>
     Root Account - created by default and should not be used or shared.<br>
     Users - people within your organization and can be grouped.<br>
@@ -134,15 +134,90 @@
     Example: AWS CLI is built on ASW SDK for Python.<br>
 </p>
 
-<h2>Cloudshell</h2>
+<h2>AWS CloudShell</h2>
 <p>
     It is not available in all regions.<br>
     Available regions are here: <a href="https://docs.aws.amazon.com/cloudshell/latest/userguide/supported-aws-regions.html">AWS Cloudshell Region Availability</a><br>
+    Icon similar to PowerShell icon<br>
     Alternative from using CMD,Terminal to manage AWS.<br>
+    Any files made in CloudShell will remain.<br>
+    You can upload & download in CloudShell<br>
+</p>
+
+<h2>IAM Roles for Services</h2>
+<p>
+    Some AWS services will need to perform actions on your behalf.<br>
+    To allow this, we will assign permissions to AWS services with IAM roles.<br>
+    Common Roles:<br>
+    1. EC2 Instance<br>
+    2. Lambda Function Roles<br>
+    3. Roles for CloudFormation<br>
+</p>
+
+<h2>IAM Security Tools</h2>
+<p>
+    1. IAM credentials report (account-level)<br>
+    -a report that lists all your account's users and the stauts of their various credentials.<br><br>
+    2. IAM Access Advisore (user-level)<br>
+    -access advisore shows the service permissions granted to a user and when those services where last accessed<br>
+    -you can use this Information to revise your policies to re-enforce 'least Privilege'.<br>
+</p>
+
+<h2>IAM Summary</h2>
+<p>
+    Users: mapped to a physical user, has a password for AWS Console.<br>
+    Groups: contains users only.<br>
+    Policies: JSON document that outlines permissions for users & groups.<br>
+    Roles: for EC2 Instances or AWS services.<br>
+    Security: MFA + Password Policy.<br>
+    AWS CLI: manage your AWS services using the command line.<br>
+    AWS SDK: manage AWS services using a programming language<br>
+    Access Keys: access AWS using the CLI or SDK.<br>
+    Audit: IAM credential Reports & IAM Access Advisor.<br>
+</p>
+
+<h2 style="color:red;">EC2 Fundamentals</h2>
+<p>
+    Knowing EC2 is fundamental to how the cloud works<br>
+    EC2 = Elastic Cloud Computing = IaaS<br>
+    EC2 is one of the most popular AWS services.<br>
+    EC2 mainly consists in the capability of:<br>
+    1. Renting Virtual Machines (EC2)<br>
+    2. Storing data on virtual drives, Elastic Block Store (EBS)<br>
+    3. Distributing load across machines, Elastic Load Balancer (ELB)<br>
+    4. Scaling the service using an auto scaling group (ASG)<br><br>
+
+    <h2>EC2 sizing and configuration options</h2>
+    You can choose:<br>
+    Operating System (OS): Linux, Windows, or MacOS.<br>
+    How much computing power and cores (CPU).<br>
+    How much memory (RAM).<br>
+    How much storage space being network attached (EBS & EFS) or hardware (EC2 Instance Store).<br>
+    Network card to include the speed of the card and public IP address.<br>
+    Firewall rules done in the security group.br>
+    Bootstrap script (configure at first launch) with EC2 user data.<br>
+
+    <h2>EC2 User Data (Bootstrap)</h2>
+    It's possible to bootstrap our instances using EC2 User Data Scripts.<br>
+    Bootstrapping means launching of commands when a machine starts.<br>
+    The script only runs once at the instance first start.<br>
+    The EC2 User Data Script runs with the Root user.<br>
+    EC2 User data is used to automate boot tasks such as:<br>
+    1. Installing updates.<br>
+    2. Installing Software.<br>
+    3. Download common files from the internet.<br>
+    4. Anything you can think of.<br>
+    **The more you have bootstrapped the more the instance has to do at startup, the longer it could take.<br>
+
+    <h2>EC2 Instance Types</h2>
+    <img src="EC2_Sizes.jpg" alt="EC2 Instances">
 
 </p>
 
 
 
+
+
+<p>Updated as of 5/2/2023</p>
 </body>
 </html>
