@@ -199,24 +199,59 @@
 
     <h2>EC2 User Data (Bootstrap)</h2>
     It's possible to bootstrap our instances using EC2 User Data Scripts.<br>
-    Bootstrapping means launching of commands when a machine starts.<br>
-    The script only runs once at the instance first start.<br>
+    Bootstrapping means launching of commands when a machine first launches.<br>
+    The script only runs once at the instance first launch.<br>
     The EC2 User Data Script runs with the Root user.<br>
     EC2 User data is used to automate boot tasks such as:<br>
     1. Installing updates.<br>
     2. Installing Software.<br>
     3. Download common files from the internet.<br>
     4. Anything you can think of.<br>
-    **The more you have bootstrapped the more the instance has to do at startup, the longer it could take.<br>
+    **The more you have bootstrapped the more the instance has to do at first launch, the longer it could take.<br>
 
     <h2>EC2 Instance Types</h2>
-    <img src="EC2_Sizes.jpg" alt="EC2 Instances">
+    <img src="EC2_Sizes.jpg" alt="EC2 Instances"><br>
+    Take m5.2xlarge for example:<br>
+    m: instance class<br>
+    5: generation (AWS improves over time)<br>
+    2xlarge: size of the instance class.<br><br>
+
+    General Purpose:<br>
+    Great for a diversity of workloads such as web servers or code repositories.<br>
+    Balanced between:<br>
+    -Compute<br>
+    -Memory<br>
+    -Networking<br><br>
+
+    Compute Optimized:<br>
+    Great for compute intensive tasks that require high performance processors:<br>
+    -Batch processing workloads<br>
+    -Media transcoding<br>
+    -High performance web servers<br>
+    -High performance computing (HPC)<br>
+    -Scientific modeling and machine learning<br>
+    -Dedicated gaming servers<br><br>
+
+    Memory Optimized:<br>
+    Fast performance for workloads that process large data sets in memory.<br>
+    Use cases:<br>
+    -High performance relational/non-relational databases.<br>
+    -Distributed web scale cache stores.<br>
+    -In-memory databases optimized for business intelligence (BI)<br>
+    -Applications performing real-time processing of big, unstructured data.<br><br>
+    
+    Storage Optimized:<br>
+    Great for storage-intensive tasks that require high, sequential read and write access to large data sets on local storage<br>
+    Use cases:<br>
+    -High frequency online transaction processing (OLTP)<br>
+    -Relational and NoSQL databases.<br>
+    -Cach for in-memory databases (like Redis)<br>
+    -Data warehousing applications<br>
+    -Distributed file systems.<br><br>
+
+    Full breakdown of instances: <a href="https://instances.vantage.sh/">AWS Instance list</a><br>
 
 </p>
-
-
-
-
 
 <p>Updated as of 5/2/2023</p>
 </body>
