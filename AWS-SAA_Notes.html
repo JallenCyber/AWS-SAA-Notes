@@ -251,6 +251,39 @@
 
     Full breakdown of instances: <a href="https://instances.vantage.sh/">AWS Instance list</a><br>
 
+    <h2>Security Groups</h2>
+    Security Groups are the fundamental of network security in AWS.<br>
+    The control how traffic is allowed into or out of our EC2 instances<br>
+    Security groups only contain ALLOW rules.<br>
+    Security groups rules can be referenced by IP or by Security Group.<br>
+    <img src="EC2_Security_Group.jpg" alt="EC2 Security Group"><br>
+    Security groups act as a firewall on the EC2 instances.
+    They regulate:<br>
+    1. Access to ports<br>
+    2. Authorized IP ranges both IPv4 & IPv6.<br>
+    3. Controls inbound network (from other to the instance)<br>
+    4. Controls outbound network (from instance to other)<br><br>
+
+    Security gropus can be attaches to multiple instances<br>
+    They are locked down to a ragion/VPC combination.<br>
+    Lives outside of the instance so if traffic is blocked it will never reach the instance.<br>
+    It's good practice to use a seperate security group for SSH access.<br>
+    If your application is not accessible (time out), then it's a security group issue<br>
+    If your application gives a connection refused error then its an application error.<br>
+    All inbound traffic is BLOCKED by default<br>
+    All outbound trafiic is ALLOW by default<br>
+    <img src="EC2_demo.jpg" alt="EC2 Demo"><br>
+    Important Ports:<br>
+    21 - FTP (File Transfer Protocol) - upload files into a file share.<br>
+    22 - SSH (Secure Shell) - Log into a *NIX instance<br>
+    22 - SFTP (Secure File Transfer Protocol) - uplaod files via SSH<br>
+    80 - HTTP - for accessing unsecure webistes.<br>
+    443 - HTTPS - for accessing secure websites.<br>
+    3389 - RDP (Remote Desktop Protocol) - log into a Windows instance<br>
+
+
+
+
 </p>
 
 <p>Updated as of 5/2/2023</p>
