@@ -332,12 +332,26 @@
     The 'spot block' strategy':<br>
     -'block' spot instance during a specified time frame (1 to 6 hours) without interuptions.<br>
     -In rare situations, the instance may be reclaimed.<br>
+    To terminate a spot instance the instance must be in a 'open', 'closed', or 'disabled' state.<br>
+    Canceling does not terminate spot instances. You must cancel and then terminate.<br>
     Useful for workloads that are resilient to failure:<br>
     -Batch jobs<br>
     -Data analysis<br>
     -Image processing<br>
     -Any distributed workloads<br>
     -Workloads with a flexible start/stop time<br><br>
+
+    Spot Fleets - Set of Spot Instances + (optional) On-Demand Instances<br>
+    The spot fleet will try to meet the target capacity with price constraints:<br>
+    -Define possible launch pools: instance type (m5.large), OS, AZ.<br>
+    -Can have multiple launch pools, so that the fleet can choose.<br>
+    -Spot fleet stopslaunching instances when reaching capacity or max cost.<br>
+    Strategies to allocate spot instances:<br>
+    -lowestPrice: from the pool with the lowest price (cost optimization, short workload).<br>
+    -diversified: distributed across all pools (great for availablity, long workloads)<br>
+    -capacityOptimized: pool with optimal capacity or the number of instances.<br>
+    -priceCapacityOptimized (recommended): pools with highest capacity available, then select the pool with the lowest price (best choice for most workloads)<br>
+    Spot Fleets will automatically request Spot Instances with the lowest price.<br><br>
 
     Dedicated hosts - book an entire physical server, control instance placement.<br>
     A physical server with EC2 instance capacity fully dedicated to your use.<br>
