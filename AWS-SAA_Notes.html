@@ -385,8 +385,86 @@
 
     <img src="Pictures/price.jpg" alt="Price"><br><br>
 
+    <h2 style="color:red;">EC2 - Solutions Architect Associate Level</h2>
+
+    <h2>Private vs Public IP</h2>
+    Two addresses in networking: IPv4 & IPv6.<br>
+    IPv4 is most common format used online with 3.7 billion available addresses<br>
+    IPv6 is newer and solves problems for IOT devices.<br>
+    Public IP's are accessible via Internet.<br>
+    Private IP's are only accessible in your private network.<br><br>
+
+    <h2>Private vs Public IP Fundamental Differences</h2>
+    Public IP:<br>
+    -Public IP means the machine can be identified on the internet (WWW).<br>
+    -Must be unique across the whole web (no two machines can have the same public IP)<br>
+    -Can be geo-located easily.<br><br>
+    Private IP:<br>
+    -Private IP means the machine can only be identified on a private network only.<br>
+    -The IP must be uniquw across the private network.<br>
+    -BUT two different private networks (two companies) can have the same IPs.<br>
+    -Machines connect to WWW using an internet gatewat (proxy)<br>
+    -Only a specific range of IPs can be used as privtae IP<br><br>
+
+    <h2>Elastic IPs</h2>
+    When you staop and then start an EC2 instance, it can change its public IP.<Br>
+    If you need to have a fixed public IP for your instance, you need an Elastic IP.<br>
+    An elastic IP is a public IPv4 IP you own as long as you dont delete it.<br>
+    You can attach it to one instance at a time.<br>
+    With an elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account<br>
+    You can only have 5 elastic IPs in your account. (you can ask AWS to increase that.)<br>
+    Overall, try to avoid using Elastic IPs:<br>
+    -The often reflect poor Architectural decisions<br>
+    -Instead, use a random IP and register a DNS name to it.<br>
+    -Or use a LB and dont use a public IP.<br><br>
+
+    By default, your EC2 machine comes with:<br>
+    -A private IP for internal AWS network.<br>
+    -A public IP for WWW.<br><br>
+
+    When we are doing SSH into EC2 machines:<br>
+    -We cant use a private IP because we are not in the same network.<br>
+    -We can only use the Public IP.<br><br>
+    -If the machine is stopped and started the public IP will change.<br>
+
+    <h2>EC2 placement groups</h2>
+    Gives you control over the EC2 instance placement strategy.<br>
+    The strategy can be define by using placement groups.<br><br>
+    When you create a placement group, you specify one of the following strategies for the group:<br>
+    Cluster, Spread, or partition.<br><br>
+
+    -Cluster - Cluster instances into a low-latency group in a single AZ. Sll the instances are on the same rack in the same AZ.<br>
+    Pros: Great network (10Gbps bandwidth between instances)<br>
+    Cons: If the rack fails all instances fail together.<br>
+    Use case:<br>
+    -Big data job that needs completed fast<br>
+    -Application that needs extremely low latency and high network throughput.<br><br>
+
+    -Spread - Spread instances across underlying hardware (max of 7 instances per group per AZ). Used for critical applications since spread minimizes failure risk.<br>
+    Pros:<br>
+    -Span across multi AZ's<br>
+    -Reduced risk of simultaneous failure.<br>
+    -EC2 instances are on different hardware.<br>
+    Cons:<br>
+    Limited to 7 instances per AZ per placement group.<br>
+    Use Case:<br>
+    Application that needs to maximize high availability<br>
+    Critical applications where each instance msut be isolated from failure from each other.<br><br>
     
-    
+    -Partition - spreads the instances across many different partitions (whicc rely on different sets of racks) within an AZ. Scales to 100's of EC2 instances per group (Hadoop, Cassandra, Kafka.)<br><br>
+    Can have up to 7 partitions per AZ.<br>
+    Can span multiple AZ in the same region.<br>
+    The instances in a partition do not share rcks with the instances in the other partitions.<br>
+    A partition failur can affect many EC2 but wont affect the other partitions.<br>
+    EC2 instances get acces to the partition info as metadata.<br><br>
+    Use cases:<br>
+    HDFs, HBase, Cassandra, Kafka.<br>
+
+
+
+
+
+
 </p>
 
 <p>Updated as of 5/2/2023</p>
