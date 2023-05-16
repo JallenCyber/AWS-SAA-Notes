@@ -407,7 +407,7 @@
     -Only a specific range of IPs can be used as privtae IP<br><br>
 
     <h2>Elastic IPs</h2>
-    When you staop and then start an EC2 instance, it can change its public IP.<Br>
+    When you stop and then start an EC2 instance, it can change its public IP.<Br>
     If you need to have a fixed public IP for your instance, you need an Elastic IP.<br>
     An elastic IP is a public IPv4 IP you own as long as you dont delete it.<br>
     You can attach it to one instance at a time.<br>
@@ -433,7 +433,7 @@
     When you create a placement group, you specify one of the following strategies for the group:<br>
     Cluster, Spread, or partition.<br><br>
 
-    -Cluster - Cluster instances into a low-latency group in a single AZ. Sll the instances are on the same rack in the same AZ.<br>
+    -Cluster - Cluster instances into a low-latency group in a single AZ. All the instances are on the same rack in the same AZ.<br>
     Pros: Great network (10Gbps bandwidth between instances)<br>
     Cons: If the rack fails all instances fail together.<br>
     Use case:<br>
@@ -451,7 +451,7 @@
     Application that needs to maximize high availability<br>
     Critical applications where each instance msut be isolated from failure from each other.<br><br>
     
-    -Partition - spreads the instances across many different partitions (whicc rely on different sets of racks) within an AZ. Scales to 100's of EC2 instances per group (Hadoop, Cassandra, Kafka.)<br><br>
+    -Partition - spreads the instances across many different partitions (which rely on different sets of racks) within an AZ. Scales to 100's of EC2 instances per group (Hadoop, Cassandra, Kafka.)<br><br>
     Can have up to 7 partitions per AZ.<br>
     Can span multiple AZ in the same region.<br>
     The instances in a partition do not share rcks with the instances in the other partitions.<br>
@@ -488,14 +488,8 @@
     -Saving the RAM state.<br>
     -Services that take time to initialize.<br>
 
-
-
-
-
-
-
 </p>
 
-<p>Updated as of 5/2/2023</p>
+<p>Updated as of 5/16/2023</p>
 </body>
 </html>
