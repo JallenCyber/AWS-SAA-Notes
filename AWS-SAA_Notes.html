@@ -473,6 +473,21 @@
     Bound to a specific AZ.<br>
     A link to additional information regarding ENI: <a href="https://aws.amazon.com/blogs/aws/new-elastic-network-interfaces-in-the-virtual-private-cloud/">AWS ENI</a>
 
+    <h2>EC2 Hibernate</h2>  
+    Introducing EC2 Hibernate:<br>
+    -The in-memory (RAM) state is preserved.<br>
+    -The instance boot iw much faster because the OS was not stopped or restarted.<br>
+    -Under the hood: the RAM state is written in the EBS root volume.<br>
+    -The root EBS volume must be encrypted.<br>
+    -Ram must be less than 150gb<br>
+    -The root EBS volume must have the same or more volume of the RAM.<br>
+    -Instnace can not be hibernated more than 60 days.<br><br>
+
+    Use cases:<br>
+    -Long-running processing.<br>
+    -Saving the RAM state.<br>
+    -Services that take time to initialize.<br>
+
 
 
 
